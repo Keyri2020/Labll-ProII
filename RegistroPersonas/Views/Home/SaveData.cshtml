@@ -1,0 +1,51 @@
+﻿@model RegistroPersonas.Dominio.PersonTb
+
+@{
+    ViewData["Title"] = "Save";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title></title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+</head>
+<body>
+
+     <h1>Save</h1>
+
+    @using (Html.BeginForm("Save", "Home", FormMethod.Post))
+    {
+        <div class="contenedorp">
+            <div class="titulo">
+                <h1 class="animate__animated animate__backInDown"><i class="far fa-save"></i>  Save person <i class="fas fa-save"></i></h1>
+            </div>
+            <div class="cardbody">
+                <div class="estilotexto">
+                    @Html.LabelFor(n => n.NombrePersona)
+                    @Html.TextBoxFor(n => n.NombrePersona)
+                    @Html.ValidationMessageFor(n => n.NombrePersona)
+                    <br />
+                    @Html.LabelFor(m => m.EdadPersona)
+                    @Html.TextBoxFor(m => m.EdadPersona)
+                    @Html.ValidationMessageFor(m => m.EdadPersona)
+                    <br />
+                    @Html.LabelFor(s => s.DescripcionPersona)
+                    @Html.TextBoxFor(s => s.DescripcionPersona)
+                    @Html.ValidationMessageFor(s => s.DescripcionPersona)
+                    <br />
+                    <br />
+                    <button type="button" class="btn btn-outline-info">Save</button>
+                </div>
+
+            </div>
+            <h1>@ViewBag.mensaje</h1>
+        </div>
+     } 
+    <div>
+        <a asp-action="Index">Back to List</a>
+    </div>
+</body>
+</html>
