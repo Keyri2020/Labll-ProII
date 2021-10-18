@@ -40,7 +40,7 @@ namespace RegistroPersonas.Controllers
                     personTb.DescripcionPersona = viewModel.DescripcionPersona;
 
                     iperson.SaveData(personTb);
-                    return View("Insex");
+                    return View("Index");
 
                 }
                 else
