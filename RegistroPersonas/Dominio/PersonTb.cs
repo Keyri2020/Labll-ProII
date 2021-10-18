@@ -17,11 +17,17 @@ namespace RegistroPersonas.Dominio
 
         public int IdPersona { get; set; }
 
+        [Display(Name = "NombrePersona")]
+        [Required(ErrorMessage = "Este campo es requerido")]
         public string NombrePersona { get; set; }
 
+        [Display(Name = "EdadPersona")]
+        [Required(ErrorMessage = "Este campo es requerido")]
+        [Range(18, 120, ErrorMessage = "Solo mayores de 18 años")]
         public int EdadPersona { get; set; }
 
-
+        [Display(Name = "DescripcionPersona")]
+        [Required(ErrorMessage = "Este campo es requerido")]
         public string DescripcionPersona { get; set; }
 
     }
