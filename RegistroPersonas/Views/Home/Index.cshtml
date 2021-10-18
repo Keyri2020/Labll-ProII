@@ -1,10 +1,73 @@
-﻿@{
-    ViewData["Title"] = "Home Page";
+﻿
+@{
+    ViewData["Title"] = "MostrarDatos";
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
 <div class="text-center">
     <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
 </div>
-@Html.ActionLink("Ver Datos", "ShowData")
-<br />
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+</head>
+
+
+<body>
+    <h1 class="animate__animated animate__fadeInDown"><i class="fas fa-users"></i> Information of people</h1>
+
+    <div>
+        <table id="persontb" class="table table-success table-striped">
+            <thead>
+                <tr>
+                    <th>
+                        Id
+                    </th>
+                    <th>
+                        Nombre
+                    </th>
+                    <th>
+                        Edad
+                    </th>
+                    <th>
+                        Descripcion
+                    </th>
+                </tr>
+            </thead>
+        </table>
+
+    </div>
+
+    @section scripts{
+
+        <script src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.min.js"></script>
+        <script>
+            $(document).ready(function () {
+                var tabla = $('#persontb').DataTable({
+                    "ajax": {
+                        "url": '/Home/GetAll',
+                        "type": "get",
+                        "datatype": "json"
+                    },
+                    "columns": [
+                        { "data": "IdPersona", "name": "IdPersona", "autoWidth": true },
+                        { "data": "NombrePersona", "name": "NombrePersona", "autoWidth": true },
+                        { "data": "EdadPersona", "name": "EdadPersona", "autoWidth": true },
+                        { "data": "DescripcionPersona", "name": "DescripcionPersona", "autoWidth": true }
+                    ]
+                });
+            });
+
+        </script>
+    }
+
+    <h4></h4>
+    <div>
+        <a type="button" class=" btn btn-outline-info" href="https://localhost:44325/Home/SaveData"> Agregar personas</a>
+    </div>
+
+</body>
+</html>
