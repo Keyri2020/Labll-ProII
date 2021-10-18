@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "ZLnygtEbJgUuaCOAFV7TviGcK9yeV7f9pDbXXQQb3BUKrLNWdhWWk/6B6zxYYI7j/ZMwetc/fOqlGkvWQQGD0Q==",
+  "dgSpecHash": "VkFHQk5vXVGbhDwseImPL4w1++k55ecykZkf05VRwYorwBpx9Igakb9qBmWxoTfk63a59C458OugWuVxErMYzQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\keyri\\OneDrive\\Escritorio\\PRO ll\\RegistroPersonas\\RegistroPersonas.csproj",
+  "projectFilePath": "C:\\Users\\keyri\\OneDrive\\Documentos\\GitHub\\Labll-ProII\\RegistroPersonas\\RegistroPersonas.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\keyri\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\keyri\\.nuget\\packages\\microsoft.aspnetcore.antiforgery\\2.2.0\\microsoft.aspnetcore.antiforgery.2.2.0.nupkg.sha512",
